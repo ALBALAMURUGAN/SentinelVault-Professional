@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SentinelVault — Cloud Disaster Recovery & Backup Platform</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+tailwind.config={theme:{extend:{
+colors:{limex:'#CDFF3C',limedim:'#E8FFB8',limedark:'#9DC500',ink:'#0A0C0A',paper:'#F6F7F1',line:'#E6E8DF',mutedx:'#6B7268'},
+fontFamily:{grotesk:['"Space Grotesk"','Inter','sans-serif'],mono:['"JetBrains Mono"','monospace']},
+boxShadow:{premium:'0 20px 60px -15px rgba(10,12,10,.18)'}
+}}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+<!-- LANDING -->
+<div id="landing">
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-line">
+<div class="max-w-[1400px] mx-auto px-5 h-[68px] flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-ink flex items-center justify-center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z" fill="#CDFF3C"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="#0A0C0A" stroke-width="2" stroke-linecap="round"/></svg>
+</div>
+<div><div class="font-grotesk font-bold text-[17px]">SentinelVault</div><div class="font-mono text-[9px] tracking-[.18em] text-mutedx">DR & BACKUP CLOUD</div></div>
+</div>
+<div class="hidden lg:flex gap-6 text-[13px] font-medium">
+<a href="#workflow">Workflow</a><a href="#platform">Platform</a><a href="#architecture">Architecture</a><a href="#simulator">Simulator</a><a href="#pricing">Pricing</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="hidden md:flex items-center gap-2 font-mono text-[10px] text-mutedx"><span class="dot bg-green-500"></span> ALL SYSTEMS OPERATIONAL</span>
+<button onclick="launchConsole('overview')" class="btn-lime font-grotesk font-bold px-5 py-2.5 rounded-full text-[13px]">Launch Console →</button>
+</div>
+</div>
+</nav>
+
+<header class="relative pt-[68px] overflow-hidden bg-white">
+<div class="absolute inset-0 bg-grid"></div>
+<div class="max-w-[1400px] mx-auto px-5 pt-16 pb-12 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center relative">
+<div>
+<div class="inline-flex items-center gap-2 bg-ink text-white rounded-full pl-1 pr-4 py-1.5 mb-6"><span class="bg-limex text-ink font-mono text-[10px] font-bold px-2.5 py-1 rounded-full">NEW</span><span class="text-[12px]">Python ML Anomaly Engine 2.0</span></div>
+<h1 class="font-grotesk font-bold tracking-tight leading-[1.02] text-[44px] md:text-[64px]">Cloud-Based<br>Disaster Recovery<br>& <span class="bg-limex px-1">Backup</span> Platform</h1>
+<p class="mt-6 text-[16px] md:text-[18px] text-ink/60 leading-relaxed max-w-[580px]">Enterprise-grade resilience for modern infrastructure. Automate protection, replicate across regions, detect threats and practice recovery from one control plane.</p>
+<div class="mt-8 flex flex-wrap gap-3">
+<button onclick="launchConsole('overview')" class="btn-lime font-grotesk font-bold px-7 py-4 rounded-full">Start Protecting — Free →</button>
+<button onclick="launchConsole('simulator')" class="btn-ink font-grotesk font-semibold px-7 py-4 rounded-full">▶ Run DR Simulation</button>
+</div>
+<div class="mt-9 grid grid-cols-4 gap-4 max-w-[570px] border-t border-line pt-6">
+<div><b class="font-grotesk text-[27px]">99.99%</b><div class="font-mono text-[9px] text-mutedx">UPTIME SLA</div></div>
+<div><b class="font-grotesk text-[27px]">12s</b><div class="font-mono text-[9px] text-mutedx">RTO FAILOVER</div></div>
+<div><b class="font-grotesk text-[27px]">4m</b><div class="font-mono text-[9px] text-mutedx">RPO BACKUP</div></div>
+<div><b class="font-grotesk text-[27px]">2.4PB</b><div class="font-mono text-[9px] text-mutedx">PROTECTED</div></div>
+</div>
+</div>
+<div class="relative">
+<div class="bg-ink text-white rounded-[24px] shadow-premium overflow-hidden">
+<div class="px-5 py-3 border-b border-white/10 flex justify-between"><span class="font-mono text-[11px] text-white/50">sentinel-ops • production</span><span class="pill bg-limex text-ink">● LIVE</span></div>
+<div class="p-5 grid grid-cols-3 gap-3">
+<div class="bg-white/[.05] rounded-xl p-3"><div class="font-mono text-[9px] text-white/40">BACKUP SUCCESS</div><div class="font-grotesk text-[22px] font-bold text-limex">99.2%</div></div>
+<div class="bg-white/[.05] rounded-xl p-3"><div class="font-mono text-[9px] text-white/40">RPO STATUS</div><div class="font-grotesk text-[22px] font-bold">4m 32s</div></div>
+<div class="bg-white/[.05] rounded-xl p-3"><div class="font-mono text-[9px] text-white/40">REPLICATION</div><div class="font-grotesk text-[22px] font-bold">2.4GB/s</div></div>
+</div>
+<div class="px-5 h-[150px]"><canvas id="heroChart"></canvas></div>
+<div id="heroJobs" class="p-5 pt-2 space-y-2"></div>
+</div>
+</div>
+</div>
+</header>
+
+<section id="workflow" class="max-w-[1400px] mx-auto px-5 pb-14">
+<div class="bg-ink rounded-[22px] p-7 text-white">
+<div class="flex justify-between items-center gap-3 mb-6"><div><div class="font-mono text-[10px] tracking-[.2em] text-limex">RESILIENCE LIFECYCLE</div><h2 class="font-grotesk text-[23px] font-bold">Protect → Recover → Report</h2></div><button onclick="launchConsole('overview')" class="pill bg-limex text-ink">EXPLORE →</button></div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2" id="workflowSteps"></div>
+</div>
+</section>
+
+<section id="platform" class="max-w-[1400px] mx-auto px-5 py-20">
+<div class="max-w-[720px]"><div class="font-mono text-[10px] tracking-[.2em] text-mutedx">THE PLATFORM</div><h2 class="font-grotesk font-bold text-[38px] md:text-[50px] tracking-tight mt-2">Everything you need to <span class="bg-limex px-1">protect data</span>.</h2><p class="text-ink/60 mt-4 leading-relaxed">Backup orchestration, replication, ML-powered monitoring, recovery, reporting and access controls in one control plane.</p></div>
+<div id="featureGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10"></div>
+</section>
+
+<section id="architecture" class="bg-paper py-20 border-y border-line">
+<div class="max-w-[1400px] mx-auto px-5">
+<div class="text-center"><div class="font-mono text-[10px] tracking-[.2em] text-mutedx">FULL-STACK ARCHITECTURE</div><h2 class="font-grotesk font-bold text-[38px] mt-2">React + Express + Supabase + Python</h2></div>
+<div id="stackCards" class="grid md:grid-cols-4 gap-4 mt-10"></div>
+</div>
+</section>
+
+<section id="simulator" class="max-w-[1400px] mx-auto px-5 py-20">
+<div class="bg-limex rounded-[26px] p-8 md:p-12">
+<div class="grid lg:grid-cols-2 gap-10 items-center"><div><span class="pill bg-ink text-limex">DISASTER RECOVERY SIMULATOR</span><h2 class="font-grotesk font-bold text-[40px] mt-4">Practice failure safely.</h2><p class="mt-4 text-ink/70 leading-relaxed">Run region-outage, ransomware and database-corruption drills without touching production data.</p><button onclick="launchConsole('simulator')" class="btn-ink mt-7 px-7 py-3.5 rounded-full font-bold">Launch Simulator</button></div>
+<div class="bg-ink text-white rounded-2xl p-5 font-mono text-[12px] leading-7"><div><span class="text-white/30">[09:41:02]</span> <span class="text-red-400">CHAOS:</span> us-east-1 partition</div><div><span class="text-white/30">[09:41:04]</span> <span class="text-yellow-300">DETECT:</span> ML confidence 97.2%</div><div><span class="text-white/30">[09:41:10]</span> <span class="text-limex">FAILOVER:</span> eu-west-1</div><div><span class="text-white/30">[09:41:14]</span> <span class="text-limex">VERIFY:</span> 24/24 PASS</div></div></div>
+</div>
+</section>
+
+<section id="pricing" class="bg-paper border-y border-line py-20">
+<div class="max-w-[1100px] mx-auto px-5"><div class="text-center"><div class="font-mono text-[10px] tracking-[.2em] text-mutedx">PRICING</div><h2 class="font-grotesk font-bold text-[40px] mt-2">Resilience that scales</h2></div><div id="pricingGrid" class="grid md:grid-cols-3 gap-5 mt-10"></div></div>
+</section>
+
+<footer class="bg-ink text-white py-8"><div class="max-w-[1400px] mx-auto px-5 flex justify-between gap-5 flex-wrap"><b class="font-grotesk">SentinelVault</b><span class="font-mono text-[10px] text-white/40">CLOUD RESILIENCE • 2026</span></div></footer>
+</div>
+
+<!-- CONSOLE -->
+<div id="console" class="hidden min-h-screen bg-paper">
+<aside id="sidebar" class="fixed left-0 top-0 bottom-0 w-[264px] bg-white border-r border-line z-40 flex flex-col max-lg:-translate-x-full transition-transform">
+<div class="h-[64px] px-4 border-b border-line flex items-center gap-2"><div class="w-9 h-9 bg-ink rounded-xl flex items-center justify-center text-limex">◆</div><div><b class="font-grotesk">SentinelVault</b><div class="font-mono text-[8px] text-mutedx">OPS CONSOLE</div></div><button class="ml-auto lg:hidden" onclick="toggleSidebar()">×</button></div>
+<div class="p-3"><button onclick="openPalette()" class="w-full bg-paper border border-line rounded-xl px-3 py-2.5 text-left text-[12px] text-mutedx">🔍 Search or jump to… <span class="float-right">⌘K</span></button></div>
+<nav id="sideNav" class="flex-1 overflow-y-auto px-2.5 py-2 space-y-5"></nav>
+<div class="p-3 border-t border-line"><div class="bg-ink text-white rounded-xl p-3"><div class="font-mono text-[9px] text-limex">BACKEND STATUS</div><div class="font-mono text-[10px] mt-2 space-y-1"><div>Express API :4000 <span class="float-right text-green-400">● 42ms</span></div><div>Supabase PG <span class="float-right text-green-400">● pooled</span></div><div>Python ML :8000 <span class="float-right text-limex">● live</span></div></div></div><div class="mt-2 bg-paper rounded-xl p-2.5 flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-ink text-limex flex items-center justify-center font-bold">AR</div><div><b class="text-[12px]">A. Rahman</b><div id="userRoleLabel" class="font-mono text-[9px] text-mutedx">ADMIN • SRE</div></div></div></div>
+</aside>
+
+<div class="lg:pl-[264px] min-h-screen">
+<header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-line">
+<div class="h-[64px] flex items-center gap-3 px-4 md:px-6"><button onclick="toggleSidebar()" class="lg:hidden w-9 h-9 border border-line rounded-lg">☰</button><div><div id="crumbTop" class="font-mono text-[9px] text-mutedx">OPERATE</div><div id="crumbTitle" class="font-grotesk font-bold">Dashboard</div></div><div class="ml-auto flex items-center gap-2"><select id="roleSel" onchange="switchRole(this.value)" class="bg-limex border-2 border-ink rounded-full px-3 py-2 font-mono text-[10px] font-bold"><option value="admin">ADMIN</option><option value="operator">OPERATOR</option><option value="auditor">AUDITOR</option><option value="viewer">VIEWER</option></select><button onclick="toggleNotifs(event)" class="relative w-10 h-10 rounded-full border border-line bg-white">🔔<span id="notifCount" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-ink text-limex text-[9px] flex items-center justify-center">4</span></button><button onclick="launchBackupModal()" data-perm="backup:run" class="btn-lime rounded-full px-4 py-2.5 font-bold text-[12px]">+ New Backup</button><button onclick="backToSite()" class="w-9 h-9 rounded-full border border-line">↗</button></div><div id="notifDrop" class="hidden absolute right-4 top-[68px] w-[360px] bg-white border border-line rounded-2xl shadow-premium z-50"></div></div>
+<div class="border-t border-line px-3 py-2"><div id="topTaskbar" class="flex gap-1.5 overflow-x-auto"></div></div>
+</header>
+<main id="viewRoot" class="max-w-[1440px] mx-auto p-4 md:p-6">
+<section data-view="overview"></section><section data-view="backups" class="hidden"></section><section data-view="recovery" class="hidden"></section><section data-view="replication" class="hidden"></section><section data-view="storage" class="hidden"></section><section data-view="monitor" class="hidden"></section><section data-view="analytics" class="hidden"></section><section data-view="schedules" class="hidden"></section><section data-view="simulator" class="hidden"></section><section data-view="restore" class="hidden"></section><section data-view="security" class="hidden"></section><section data-view="audit" class="hidden"></section><section data-view="iam" class="hidden"></section><section data-view="settings" class="hidden"></section>
+</main>
+</div>
+</div>
+
+<div id="modalRoot"></div><div id="toasts" class="fixed bottom-5 right-5 z-[100] w-[360px] max-w-[calc(100vw-32px)] space-y-2"></div>
+<div id="palette" class="hidden fixed inset-0 z-[90] modal-bg flex justify-center pt-[12vh] px-4" onclick="if(event.target===this)closePalette()"><div class="bg-white rounded-2xl shadow-premium w-[560px] max-w-full overflow-hidden h-fit"><div class="p-4 border-b border-line flex gap-3"><input id="paletteInput" oninput="renderPalette(this.value)" autofocus placeholder="Jump to…" class="flex-1 border-none bg-transparent"></div><div id="paletteList" class="max-h-[400px] overflow-y-auto p-2"></div></div></div>
+
+
+  <script src="/src/main.js"></script>
+</body>
+</html>

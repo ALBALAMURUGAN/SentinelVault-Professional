@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<rect width="1200" height="680" rx="24" fill="#070b0d"/>
+<text x="60" y="70" fill="#eef5f2" font-family="Arial" font-size="30" font-weight="700">SentinelVault — High-Level Architecture</text>
+<text x="60" y="104" fill="#8da09a" font-family="Arial" font-size="15">Control plane, data protection services, multi-region storage and recovery workflows</text>
+<g font-family="Arial">
+<rect x="70" y="155" width="1060" height="105" rx="18" fill="#101719" stroke="#2b3936"/>
+<text x="100" y="190" fill="#c9ff39" font-size="14" font-weight="700">USER &amp; ACCESS LAYER</text>
+<text x="100" y="225" fill="#eef5f2" font-size="18">RBAC • Authentication • Command Palette • Audit Trails • Policy Controls</text>
+<rect x="70" y="310" width="300" height="230" rx="18" fill="#101719" stroke="#2b3936"/>
+<text x="100" y="350" fill="#c9ff39" font-size="14" font-weight="700">CONTROL PLANE</text>
+<text x="100" y="390" fill="#eef5f2" font-size="17">Backup Orchestration</text><text x="100" y="422" fill="#eef5f2" font-size="17">Scheduling &amp; Policies</text><text x="100" y="454" fill="#eef5f2" font-size="17">Monitoring &amp; Alerts</text><text x="100" y="486" fill="#eef5f2" font-size="17">DR Simulation</text>
+<rect x="450" y="310" width="300" height="230" rx="18" fill="#101719" stroke="#2b3936"/>
+<text x="480" y="350" fill="#5ee7d7" font-size="14" font-weight="700">DATA PROTECTION</text>
+<text x="480" y="390" fill="#eef5f2" font-size="17">Backup Jobs</text><text x="480" y="422" fill="#eef5f2" font-size="17">Verification</text><text x="480" y="454" fill="#eef5f2" font-size="17">Replication</text><text x="480" y="486" fill="#eef5f2" font-size="17">Restore Points</text>
+<rect x="830" y="310" width="300" height="230" rx="18" fill="#101719" stroke="#2b3936"/>
+<text x="860" y="350" fill="#c9ff39" font-size="14" font-weight="700">CLOUD &amp; RECOVERY</text>
+<text x="860" y="390" fill="#eef5f2" font-size="17">Multi-Region Storage</text><text x="860" y="422" fill="#eef5f2" font-size="17">Failover Workflows</text><text x="860" y="454" fill="#eef5f2" font-size="17">Recovery Console</text><text x="860" y="486" fill="#eef5f2" font-size="17">Compliance Evidence</text>
+<path d="M220 260V300" stroke="#c9ff39" stroke-width="3"/><path d="M600 260V300" stroke="#5ee7d7" stroke-width="3"/><path d="M980 260V300" stroke="#c9ff39" stroke-width="3"/>
+<rect x="70" y="585" width="1060" height="45" rx="12" fill="#14201d" stroke="#c9ff39"/>
+<text x="600" y="614" text-anchor="middle" fill="#c9ff39" font-family="Arial" font-size="15" font-weight="700">OBSERVABILITY • SECURITY • RESILIENCE • RECOVERY READINESS</text>
+</g></svg>

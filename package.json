@@ -1,0 +1,19 @@
+{
+  "name": "sentinelvault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloud Disaster Recovery & Backup Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "vite": "^7.1.9"
+  }
+}
